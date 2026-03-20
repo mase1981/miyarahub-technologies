@@ -14,10 +14,11 @@ This site is deployed automatically via GitHub Pages from the `main` branch.
 
 ## DNS Configuration (Namecheap)
 
-| Type  | Host | Value                        |
-|-------|------|------------------------------|
-| A     | @    | 185.199.108.153              |
-| A     | @    | 185.199.109.153              |
-| A     | @    | 185.199.110.153              |
-| A     | @    | 185.199.111.153              |
-| CNAME | www  | mase1981.github.io           |
+**NOTE:** The `@` A record points to Synology (dynamic DNS / reverse proxy). Do NOT change it.
+
+| Type  | Host | Value              |
+|-------|------|--------------------|
+| A     | @    | (keep existing!)   |
+| CNAME | www  | mase1981.github.io |
+
+Site is served at `www.miyarahub.com` via GitHub Pages.
