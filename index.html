@@ -229,9 +229,7 @@
             border-radius: 16px;
             padding: 2rem;
             transition: transform 0.3s, border-color 0.3s;
-            text-decoration: none;
             color: inherit;
-            display: block;
         }
         .portfolio-card:hover {
             transform: translateY(-4px);
@@ -282,6 +280,9 @@
             margin-top: 1rem;
         }
         .store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
             padding: 0.3rem 0.75rem;
             background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15));
             border: 1px solid rgba(6, 182, 212, 0.25);
@@ -289,6 +290,14 @@
             font-size: 0.78rem;
             font-weight: 600;
             color: var(--accent);
+            text-decoration: none;
+            transition: background 0.3s, border-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+        .store-badge:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.3));
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: translateY(-1px);
         }
 
         /* ABOUT */
@@ -520,7 +529,7 @@
                 A selection of production applications built and maintained by MiyaraHub Technologies.
             </p>
             <div class="portfolio-grid">
-                <a href="https://play.google.com/store/apps/details?id=com.elanaudiolab.app" target="_blank" rel="noopener" class="portfolio-card">
+                <div class="portfolio-card">
                     <span class="tag">E-Commerce • Audio</span>
                     <h3>Elan Audio Lab</h3>
                     <p>Full-stack e-commerce platform for premium audio products. Features product catalog, Square &amp; PayPal payment processing, quote system, blog, and artist showcases.</p>
@@ -532,11 +541,11 @@
                         <span>Web + Android + iOS</span>
                     </div>
                     <div class="store-links">
-                        <span class="store-badge">▶ Google Play</span>
-                        <span class="store-badge">🌐 elanaudiolab.com</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.elanaudiolab.app" target="_blank" rel="noopener" class="store-badge">▶ Google Play</a>
+                        <a href="https://elanaudiolab.com" target="_blank" rel="noopener" class="store-badge">🌐 elanaudiolab.com</a>
                     </div>
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.ucremote.android" target="_blank" rel="noopener" class="portfolio-card">
+                </div>
+                <div class="portfolio-card">
                     <span class="tag">Home Automation</span>
                     <h3>UC-Remote Integration Hub</h3>
                     <p>40+ custom integrations for the Unfolded Circle Remote Two and Remote 3 smart home controllers. Device drivers for AV receivers, media players, lighting, and more.</p>
@@ -548,9 +557,9 @@
                         <span>asyncio</span>
                     </div>
                     <div class="store-links">
-                        <span class="store-badge">▶ Google Play</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.ucremote.android" target="_blank" rel="noopener" class="store-badge">▶ Google Play</a>
                     </div>
-                </a>
+                </div>
                 <div class="portfolio-card">
                     <span class="tag">Infrastructure</span>
                     <h3>Synology Manager</h3>
@@ -562,7 +571,7 @@
                         <span>iOS + Android</span>
                     </div>
                     <div class="store-links">
-                        <span class="store-badge" style="opacity:0.6">🚧 Coming Soon</span>
+                        <span class="store-badge" style="opacity:0.6; cursor: default;">🚧 Coming Soon</span>
                     </div>
                 </div>
             </div>
