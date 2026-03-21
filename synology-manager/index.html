@@ -611,7 +611,7 @@
             .hero-cta-group { flex-direction: column; align-items: center; }
         }
 
-        /* Fade-in */
+        /* Fade-in — only triggers for elements fully below viewport on load */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -620,6 +620,10 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        .fade-in.no-delay {
+            opacity: 1;
+            transform: none;
         }
 
         /* Lightbox */
@@ -1105,13 +1109,19 @@
 
     <!-- Scripts -->
     <script>
-        // Fade-in on scroll
+        // Fade-in on scroll — instantly show elements already in viewport
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('no-delay');
+            }
+        });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in:not(.no-delay)').forEach(el => observer.observe(el));
 
         // FAQ toggle
         function toggleFaq(el) {
