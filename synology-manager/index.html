@@ -275,45 +275,99 @@
             margin-right: 0.3rem;
         }
 
-        /* SCREENSHOT GALLERY */
-        .gallery-container {
+        /* SCREENSHOT CAROUSEL */
+        .carousel-container {
             position: relative;
-            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 2rem 0;
         }
-        .gallery-track {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            padding: 1rem 2rem;
+        .carousel-viewport {
+            overflow: hidden;
+            border-radius: 8px;
         }
-        .gallery-track::-webkit-scrollbar { display: none; }
-        .gallery-item {
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            width: 240px;
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .carousel-slide {
+            flex: 0 0 auto;
+            padding: 0 0.75rem;
             text-align: center;
         }
-        .gallery-item img {
+        .carousel-slide img {
             width: 100%;
             border-radius: 20px;
             border: 2px solid var(--border);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
         }
-        .gallery-item img:hover {
+        .carousel-slide img:hover {
             transform: scale(1.03);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(6, 182, 212, 0.1);
             border-color: rgba(6, 182, 212, 0.3);
         }
-        .gallery-item .caption {
+        .carousel-slide .caption {
             margin-top: 0.75rem;
             font-size: 0.85rem;
             color: var(--text-secondary);
             font-weight: 500;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .carousel-btn:hover {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.2);
+        }
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+        .carousel-btn.prev { left: -24px; }
+        .carousel-btn.next { right: -24px; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            padding: 0;
+        }
+        .carousel-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+        @media (max-width: 768px) {
+            .carousel-btn { width: 40px; height: 40px; font-size: 1.1rem; }
+            .carousel-btn.prev { left: 4px; }
+            .carousel-btn.next { right: 4px; }
         }
 
         /* HOW IT WORKS */
@@ -512,7 +566,7 @@
             .hero { padding: 5rem 1.5rem 2rem; min-height: auto; }
             .hero-phones { gap: 1rem; }
             .phone-frame { width: 160px; }
-            .gallery-item { width: 200px; }
+
             .footer-content { flex-direction: column; text-align: center; }
             .legal-banner { padding: 1.5rem; }
         }
@@ -692,57 +746,62 @@
                 intuitive navigation.
             </p>
         </div>
-        <div class="gallery-container">
-            <div class="gallery-track">
-                <div class="gallery-item">
-                    <img src="screenshots/main-page.png" alt="Dashboard Overview" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Dashboard Overview</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/dashboard-2.png" alt="Tasks & Logs" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Tasks, UPS &amp; Logs</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/dashboard-3.png" alt="System Details" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Files, Photos &amp; More</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/docker.png" alt="Docker Containers" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Docker Containers</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/cameras.png" alt="Surveillance Cameras" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Surveillance Cameras</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/storage.png" alt="Storage & Drives" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Storage &amp; Drives</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/network.png" alt="Network Monitoring" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Network Monitoring</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/system.png" alt="System Information" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">System Information</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/categories.png" alt="Dashboard Categories" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Dashboard Categories</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/settings-customize-navigation.png" alt="Custom Navigation" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Custom Navigation</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/settngs.png" alt="Settings" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Settings</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="screenshots/wdigets.png" alt="Widgets" onclick="openLightbox(this)" loading="lazy">
-                    <div class="caption">Widgets</div>
+        <div class="carousel-container" id="carousel">
+            <button class="carousel-btn prev" onclick="carouselPrev()" id="carousel-prev">‹</button>
+            <button class="carousel-btn next" onclick="carouselNext()" id="carousel-next">›</button>
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="screenshots/main-page.png" alt="Dashboard Overview" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Dashboard Overview</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/dashboard-2.png" alt="Tasks &amp; Logs" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Tasks, UPS &amp; Logs</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/dashboard-3.png" alt="System Details" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Files, Photos &amp; More</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/docker.png" alt="Docker Containers" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Docker Containers</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/cameras.png" alt="Surveillance Cameras" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Surveillance Cameras</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/storage.png" alt="Storage &amp; Drives" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Storage &amp; Drives</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/network.png" alt="Network Monitoring" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Network Monitoring</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/system.png" alt="System Information" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">System Information</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/categories.png" alt="Dashboard Categories" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Dashboard Categories</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/settings-customize-navigation.png" alt="Custom Navigation" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Custom Navigation</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/settngs.png" alt="Settings" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Settings</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="screenshots/wdigets.png" alt="Widgets" onclick="openLightbox(this)" loading="lazy">
+                        <div class="caption">Widgets</div>
+                    </div>
                 </div>
             </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
         </div>
     </section>
 
@@ -1028,6 +1087,89 @@
             document.getElementById('lightbox-img').src = img.src;
             lb.classList.add('active');
         }
+
+        // Carousel
+        (function() {
+            const track = document.getElementById('carousel-track');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const dotsContainer = document.getElementById('carousel-dots');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+            let slidesPerView = 4;
+            let slideWidth = 0;
+
+            function calcDimensions() {
+                const viewport = track.parentElement.clientWidth;
+                if (viewport < 480) slidesPerView = 2;
+                else if (viewport < 768) slidesPerView = 3;
+                else if (viewport < 1024) slidesPerView = 4;
+                else slidesPerView = 5;
+
+                slideWidth = viewport / slidesPerView;
+                slides.forEach(s => s.style.width = slideWidth + 'px');
+            }
+
+            function getMaxIndex() {
+                return Math.max(0, totalSlides - slidesPerView);
+            }
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                const pages = getMaxIndex() + 1;
+                for (let i = 0; i < pages; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+                    dot.onclick = () => goTo(i);
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateButtons() {
+                prevBtn.disabled = currentIndex <= 0;
+                nextBtn.disabled = currentIndex >= getMaxIndex();
+            }
+
+            function updateDots() {
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function goTo(index) {
+                currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+                track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+                updateButtons();
+                updateDots();
+            }
+
+            window.carouselPrev = () => goTo(currentIndex - 1);
+            window.carouselNext = () => goTo(currentIndex + 1);
+
+            function init() {
+                calcDimensions();
+                if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+                buildDots();
+                goTo(currentIndex);
+            }
+
+            init();
+            window.addEventListener('resize', init);
+
+            // Touch/swipe support
+            let startX = 0, isDragging = false;
+            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, {passive: true});
+            track.addEventListener('touchend', e => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) carouselNext();
+                    else carouselPrev();
+                }
+            }, {passive: true});
+        })();
     </script>
 </body>
 </html>
