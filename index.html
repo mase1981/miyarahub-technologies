@@ -142,12 +142,7 @@
             position: relative;
         }
         .hero-logo {
-            width: 160px;
-            height: 160px;
-            border-radius: 24px;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--neon-glow);
-            animation: neonPulse 4s ease-in-out infinite;
+            display: none;
         }
         .hero-badge {
             display: inline-flex;
@@ -234,8 +229,9 @@
             max-width: 900px;
             margin-top: 2.5rem;
             border-radius: 16px;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(230, 57, 70, 0.25);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), var(--neon-glow);
+            animation: neonPulse 4s ease-in-out infinite;
         }
 
         /* SECTIONS */
@@ -271,15 +267,16 @@
         }
         .service-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid rgba(230, 57, 70, 0.1);
             border-radius: 16px;
             padding: 2rem;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.05), 0 0 40px rgba(230, 57, 70, 0.03);
         }
         .service-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(230, 57, 70, 0.3);
-            box-shadow: 0 8px 30px rgba(230, 57, 70, 0.08);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.15), 0 8px 30px rgba(230, 57, 70, 0.1);
         }
         .service-icon {
             width: 48px;
@@ -311,15 +308,17 @@
         }
         .portfolio-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid rgba(230, 57, 70, 0.1);
             border-radius: 16px;
             padding: 2rem;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             color: inherit;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.05), 0 0 40px rgba(230, 57, 70, 0.03);
         }
         .portfolio-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(230, 57, 70, 0.3);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.15), 0 8px 30px rgba(230, 57, 70, 0.1);
         }
         .portfolio-card .tag {
             display: inline-block;
@@ -405,15 +404,16 @@
         }
         .stat-item {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid rgba(230, 57, 70, 0.1);
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
             transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.05), 0 0 40px rgba(230, 57, 70, 0.03);
         }
         .stat-item:hover {
-            border-color: rgba(230, 57, 70, 0.3);
-            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.08);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.15), 0 8px 30px rgba(230, 57, 70, 0.1);
         }
         .stat-number {
             font-size: 2rem;
@@ -453,16 +453,18 @@
             align-items: center;
             gap: 1rem;
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid rgba(230, 57, 70, 0.1);
             border-radius: 16px;
             padding: 1.5rem 2.5rem;
             text-decoration: none;
             color: inherit;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.05), 0 0 40px rgba(230, 57, 70, 0.03);
         }
         .contact-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(230, 57, 70, 0.3);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.15), 0 8px 30px rgba(230, 57, 70, 0.1);
         }
         .contact-card .icon {
             width: 48px;
