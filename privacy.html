@@ -110,13 +110,13 @@
 
     <div class="content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: March 27, 2026</p>
+        <p class="last-updated">Last updated: March 29, 2026</p>
 
-        <p>MiyaraHub Technologies LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications and services, including but not limited to <strong>Elan Audio Lab</strong>, <strong>UC-Remote Integration Hub</strong>, <strong>Synology Manager</strong>, <strong>UPSight</strong>, <strong>FuryPath</strong>, and <strong>AVR Maestro</strong> (collectively, the "Services").</p>
+        <p>MiyaraHub Technologies LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use any application, integration, or service published by MiyaraHub Technologies LLC (collectively, the "Services"). A current list of covered applications is provided in <a href="#appendix-a">Appendix A</a> below.</p>
 
         <h2>1. Data Minimization Principle</h2>
         <p><strong>MiyaraHub Technologies LLC adheres to the principle of data minimization.</strong> We collect only the minimum amount of personal data strictly necessary for the functionality of our applications and services. We do not collect data beyond what is required to provide the features you use.</p>
-        <p>Many of our applications (Synology Manager, UPSight, FuryPath, AVR Maestro, UC-Remote) operate entirely on your local network and do not transmit any device data, credentials, or usage information to our servers. Data stays on your device.</p>
+        <p>Many of our applications operate entirely on your local network and do not transmit any device data, credentials, or usage information to our servers. <strong>Data stays on your device.</strong> See <a href="#appendix-a">Appendix A</a> for details on each application's data handling model.</p>
 
         <h2>2. Information We Collect</h2>
         <p><strong>Information You Provide:</strong></p>
@@ -170,7 +170,7 @@
             <li><strong>Apple App Store:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></li>
             <li><strong>Google Play:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
         </ul>
-        <p>Hardware products such as Synology NAS systems, Unfolded Circle remotes, UPS devices, and HDFury HDMI processors, Denon/Marantz AV receivers, and devices from various manufacturers have their own data handling practices. Our applications communicate with these devices on your local network but do not control, access, or transmit data on behalf of these manufacturers.</p>
+        <p>Our applications may communicate with third-party hardware devices on your local network. These manufacturers have their own data handling practices. We do not control, access, or transmit data on behalf of any third-party hardware or service provider.</p>
 
         <h2>6. Data Storage &amp; Security</h2>
         <p>We use industry-standard security measures to protect your information, including encryption in transit (TLS/SSL) and at rest. Our backend services (where applicable) are hosted on <strong>Supabase</strong>, which provides enterprise-grade security with Row Level Security (RLS) policies.</p>
@@ -218,6 +218,59 @@
             Email: <a href="mailto:admin@miyarahub.com">admin@miyarahub.com</a><br>
             Website: <a href="https://www.miyarahub.com">www.miyarahub.com</a>
         </p>
+        <h2 id="appendix-a">Appendix A: Covered Applications &amp; Specific Disclosures</h2>
+        <p>The following applications are currently published by MiyaraHub Technologies LLC and are covered by this Privacy Policy. When new applications are released, they will be added to this appendix.</p>
+
+        <table style="width:100%; border-collapse:collapse; margin:1rem 0 2rem;">
+            <thead>
+                <tr style="border-bottom:1px solid var(--border); text-align:left;">
+                    <th style="padding:0.75rem; color:var(--text-primary);">Application</th>
+                    <th style="padding:0.75rem; color:var(--text-primary);">Data Model</th>
+                    <th style="padding:0.75rem; color:var(--text-primary);">Cloud Services Used</th>
+                </tr>
+            </thead>
+            <tbody style="color:var(--text-secondary);">
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>Elan Audio Lab</strong></td>
+                    <td style="padding:0.75rem;">Cloud-based (e-commerce)</td>
+                    <td style="padding:0.75rem;">Supabase, Square, PayPal, Firebase Crashlytics</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>UC-Remote Integration Hub</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">None</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>Synology Manager</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">Firebase Crashlytics</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>UPSight</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">Firebase Crashlytics</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>FuryPath</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">Firebase Crashlytics</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem;"><strong>AVR Maestro</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">Firebase Crashlytics</td>
+                </tr>
+                <tr>
+                    <td style="padding:0.75rem;"><strong>ProjectorPilot</strong></td>
+                    <td style="padding:0.75rem;">Local network only</td>
+                    <td style="padding:0.75rem;">Firebase Crashlytics</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Universal Rule for Local-Network Applications:</strong> Applications marked "Local network only" store all device credentials, configuration, and monitoring data exclusively on your device. No device data, network credentials, or usage telemetry is transmitted to MiyaraHub servers. The only cloud communication is anonymous crash reporting via Firebase Crashlytics, which contains no personal information or network-specific data.</p>
+
+        <p><strong>Elan Audio Lab Specific Disclosures:</strong> As an e-commerce platform, Elan Audio Lab collects transaction data (name, email, shipping address) necessary to fulfill purchases. Payment card data is processed entirely by Square and PayPal — we never see or store full card numbers. Product catalog, blog content, and artist data are served via Supabase cloud backend.</p>
     </div>
 
     <footer>
