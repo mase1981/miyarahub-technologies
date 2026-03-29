@@ -69,6 +69,12 @@
             border-bottom: 1px solid var(--border);
         }
         .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+        .nav-brand-text {
             font-size: 1.15rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -76,7 +82,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.02em;
-            text-decoration: none;
         }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a {
@@ -589,7 +594,7 @@
             .devices-table th, .devices-table td { padding: 0.65rem 0.75rem; }
         }
         @media (max-width: 480px) {
-            .nav-brand { font-size: 0.95rem; }
+            .nav-brand-text { font-size: 0.95rem; }
             .phone-frame { width: 140px; }
             .hero-cta-group { flex-direction: column; align-items: center; }
         }
@@ -633,7 +638,7 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="/" class="nav-brand">MiyaraHub Technologies</a>
+        <a href="/" class="nav-brand"><img src="/assets/logo-square.jpg" alt="MiyaraHub Logo" style="height:32px;width:32px;border-radius:6px;"><span class="nav-brand-text">MiyaraHub</span></a>
         <button class="nav-toggle" id="nav-toggle" onclick="document.getElementById('nav-menu').classList.toggle('open'); this.classList.toggle('open')" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
